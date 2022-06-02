@@ -5,9 +5,9 @@
         <input type="text" v-model="name" placeholder="Enter Name">
         <input type="text" v-model="email" placeholder="Enter Email">
         <input type="password" v-model="password" placeholder="Enter Password">
-        <button v-on:click="signUp">Sign Up</button>
+        <button class="button1" v-on:click="signUp">Sign Up</button>
         <p>
-            <router-link to="/sign-in">Sign-In Page</router-link> <br />
+            <router-link to="/sign-in">Sign-In</router-link> <br />
         </p>
     </div>
 </template>

@@ -4,8 +4,8 @@
   <div class="Sign-In">
     <input type="text" v-model="email" placeholder="Enter Email" />
     <input type="password" v-model="password" placeholder="Enter Password" />
-    <button v-on:click="login">Sign-In</button>
-    <p><router-link to="/sign-up">Sign-Up Page</router-link> <br /></p>
+    <button class="button1" v-on:click="login">Sign-In</button>
+    <p><router-link to="/sign-up">Sign-Up </router-link> <br /></p>
   </div>
 </template>
 

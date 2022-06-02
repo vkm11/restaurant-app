@@ -39,13 +39,36 @@ body{
     border:1px solid skyblue;
 }
 .register button, .Sign-In button {
-    width: 320px;
+    width: 100px;
+    border-radius: 1rem;
     height:40px;
+    border-style: outset;
     font-size: 20px;
-    border:1px solid skyblue;
+    /* border:1px solid skyblue; */
     color: #fff;
-    background-color: skyblue;
+    /* background-color: skyblue; */
     cursor:pointer;
 
+}
+.button1:hover,
+.button1:focus {
+  opacity: 0.9;
+  outline: 0;
+}
+
+.button1:active {
+  box-shadow: none;
+  margin-top: 4px;
+}
+
+.register button.button1, .Sign-In button.button1{
+  background-color: white; 
+  color: black; 
+  /* border: 2px solid #4CAF50; */
+}
+
+.register button.button1:hover, .Sign-In button.button1:hover {
+  background-color: #4CAF50;
+  color: white;
 }
 </style>
