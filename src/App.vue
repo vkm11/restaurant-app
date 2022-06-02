@@ -1,6 +1,8 @@
 <template>
+<!-- <router-link to="/">Home Page</router-link> <br />
+ <router-link to="/login">Login Page</router-link> <br /> -->
 
-<router-view />
+<router-view></router-view>
 
 </template>
 
@@ -19,5 +21,29 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.logo{ 
+    width:160px;
+}
+.register input, .Sign-In input{ 
+    width: 300px;
+    height:40px;
+    font-size: 18px;
+    padding-left: 20px;
+    display: block;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border:1px solid skyblue;
+}
+.register button, .Sign-In button {
+    width: 320px;
+    height:40px;
+    font-size: 20px;
+    border:1px solid skyblue;
+    color: #fff;
+    background-color: skyblue;
+    cursor:pointer;
+
 }
 </style>
