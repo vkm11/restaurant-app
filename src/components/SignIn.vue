@@ -1,24 +1,47 @@
 <template>
-<img class="logo" src="../assets/restor.png">
-    <h1>Sign-In </h1>
-      <div class="Sign-In">
-        
-        <input type="text" v-model="email" placeholder="Enter Email">
-        <input type="password" v-model="password" placeholder="Enter Password">
-        <button>Sign-In</button>
-        <p>
-            <router-link to="/sign-up">Sign-Up Page</router-link> <br />
-        </p>
-    </div>
+  <img class="logo" src="../assets/restor.png" />
+  <h1>Sign-In</h1>
+  <div class="Sign-In">
+    <input type="text" v-model="email" placeholder="Enter Email" />
+    <input type="password" v-model="password" placeholder="Enter Password" />
+    <button v-on:click="login">Sign-In</button>
+    <p><router-link to="/sign-up">Sign-Up Page</router-link> <br /></p>
+  </div>
 </template>
+
 <script>
+import axios from "axios";
 export default {
-  name: 'SignIn-Page',
- 
-}
+  name: "SignIn-Page",
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    async login() {
+      let result = await axios.get(
+        `http://localhost:3000/users?email=${this.email}&password=${this.password}`
+      );
+      if (result.status == 200 && result.data.length > 0) {
+        localStorage.setItem("user-info", JSON.stringify(result.data[0]));
+        this.$router.push({ name: "Home" });
+      }
+      console.log(this.email, this.password);
+      // http://localhost:3000/users?email=vijay@gmail.com&password=vijay@123
+    },
+  },
+  mounted() {
+    let user = localStorage.getItem("user-info");
+    if (user) {
+      this.$router.push({ name: "Home" });
+    }
+  },
+};
 </script>
 <style>
-h1{
-    color: orange
+h1 {
+  color: orange;
 }
 </style>
