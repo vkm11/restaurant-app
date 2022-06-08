@@ -19,18 +19,21 @@ const routes=[
     },
     {
         name:'SignIn',
-        path:'/sign-in',
         component: SignIn,
+        path:'/sign-in',
+        
     },
     {
         name:'Add',
-        path:'/add',
         component: Add,
+        path:'/add',
+       
     },
     {
         name:'Update',
-        path:'/update',
         component: Update,
+        path:'/update/:id',
+        
     },
 ];
 const router = createRouter ({
