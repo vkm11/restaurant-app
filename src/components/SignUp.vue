@@ -1,4 +1,5 @@
 <template>
+ <div id="app">
 <img class="logo" src="../assets/restor.png">
     <h1>Sign Up</h1>
     <div class="register">
@@ -7,8 +8,10 @@
         <input type="password" v-model="password" placeholder="Enter Password">
         <button class="button1" v-on:click="signUp">Sign Up</button>
         <p>
+            <br>
             <router-link to="/sign-in">Sign-In</router-link> <br />
         </p>
+    </div>
     </div>
 </template>
 
@@ -51,5 +54,17 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+h1 {
+  color: orange;
+}
+#app {
+  background: rgb(201, 117, 21);
+  height: 600px;
+  width: 500px;
+  margin-left: 30rem;
+  padding: 2rem;
+  border-radius: 2rem;
+}
+
 </style>

@@ -1,16 +1,18 @@
 <template>
     <Header />
+    <br>
     <h1>Hello {{name}}, Welcome to Home Page</h1>
     <!-- <p v-for="item in restaurants" :key="item" >
         {{item.id}} --- {{item.name}}
     </p> -->
-    <table border="1">
+    <br>
+    <table class="table">
         <tr>
-            <td>Id</td>
-            <td>Name</td>
-            <td>Address</td>
-            <td>Contact</td>
-            <td>Actions</td>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Contact</th>
+            <th>Actions</th>
         </tr>
         <tr v-for="item in restaurants" :key="item.id" >
             <td>{{item.id}}</td>
@@ -66,9 +68,10 @@ export default{
     }
 }
 </script>
-<style>
-table{
-    width:50rem;
-    height: 10rem;
+
+<style scoped>
+*{
+    margin:0;
+    border:0;  
 }
 </style>
