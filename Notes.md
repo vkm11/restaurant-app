@@ -9,6 +9,14 @@
 
 npm install axios
 
+# Install Bootstarp
+ npm install --save bootstrap
+
+#### After bootstrap install add two lines in you main.js file
+#### main.js:-
+ import 'bootstrap/dist/css/bootstrap.min.css'
+ import 'bootstrap'
+
 # Routing:
  npm install vue-router@next
  
