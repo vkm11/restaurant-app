@@ -17,7 +17,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 body{
   padding: 0;
@@ -26,7 +26,7 @@ body{
 .logo{ 
     width:160px;
 }
-.register input, .Sign-In input, .add input{ 
+.register input, .Sign-In input, .add input { 
     width: 300px;
     height:40px;
     font-size: 18px;
@@ -37,9 +37,9 @@ body{
     margin-right: auto;
     border:1px solid skyblue;
 }
-.register button, .Sign-In button, .add button  {
+.register button, .Sign-In button, .add button {
     /* width: 100px; */
-    width: 320px;
+    width: 300px;
     border-radius: 1rem;
     height:40px;
     border-style: outset;
@@ -48,7 +48,7 @@ body{
     color: #fff;
     /* background: skyblue; */
     cursor:pointer;
-}
+} 
 .button1:hover,
 .button1:focus {
   opacity: 0.9;
@@ -58,12 +58,12 @@ body{
   box-shadow: none;
   margin-top: 4px;
 }
-.register button.button1, .Sign-In button.button1{
+.register button.button1, .Sign-In button.button1, .add button.button1{
   background-color: white; 
   color: black; 
   /* border: 2px solid #4CAF50; */
 }
-.register button.button1:hover, .Sign-In button.button1:hover {
+.register button.button1:hover, .Sign-In button.button1:hover, .add button.button1:hover {
   background-color: #4CAF50;
   color: white;
 }

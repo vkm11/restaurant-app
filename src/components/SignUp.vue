@@ -58,13 +58,12 @@ export default {
 h1 {
   color: orange;
 }
-#app {
-  background: rgb(201, 117, 21);
-  height: 600px;
+#app{
+  border: 20px ridge rgb(218, 194, 89);
+  background: #4cacaf;
+  margin-top: 60px;
   width: 500px;
-  margin-left: 30rem;
-  padding: 2rem;
-  border-radius: 2rem;
+  padding:10px;
+  border-radius: 50px;
 }
-
 </style>
