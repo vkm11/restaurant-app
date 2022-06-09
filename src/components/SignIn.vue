@@ -1,6 +1,6 @@
 <template>
-
-  <div id="app">
+<section class="sig">
+  <div id="appp" >
     <img class="logo" src="../assets/restor.png" />
     <h1>Sign-In</h1>
     <div class="Sign-In">
@@ -12,8 +12,13 @@
         <br />
         create an account <router-link to="/sign-up">Sign-Up </router-link>
       </p>
+      <p class="forgot-password text-right">
+        <router-link to="forgot">Forgot Password?</router-link>
+      </p>
     </div>
   </div>
+
+  </section>
 </template>
 
 <script>
@@ -57,14 +62,20 @@ export default {
 h1 {
   color: orange;
 }
-#app{
+#appp{
   border: 20px ridge rgb(218, 194, 89);
   background: #4cacaf;
   margin-top: 60px;
   width: 500px;
   padding:10px;
   border-radius: 50px;
+  justify-content: center;
+  align-items: center;
 
+}
+.sig{
+  justify-content: center;
+  display: flex;
 }
 </style>
 

@@ -1,4 +1,5 @@
 <template>
+<section class="sig">
  <div id="app">
 <img class="logo" src="../assets/restor.png">
     <h1>Sign Up</h1>
@@ -13,6 +14,7 @@
         </p>
     </div>
     </div>
+    </section>
 </template>
 
 <script>
@@ -65,5 +67,9 @@ h1 {
   width: 500px;
   padding:10px;
   border-radius: 50px;
+}
+.sig{
+  justify-content: center;
+  display: flex;
 }
 </style>

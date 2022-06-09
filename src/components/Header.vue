@@ -1,9 +1,9 @@
 <template>
-    <div class="nav">
+    <div class="navb">
         <router-link to="/">Home</router-link> 
         <router-link to="/add">Add Restaurant</router-link> 
         <!-- <router-link to="/update">Update Restaurant</router-link>  -->
-        <a v-on:click="logout" href="#">Logout</a>
+        <a class="ak" v-on:click="logout" href="#">Logout</a>
     </div>
 </template>
 
@@ -20,12 +20,15 @@ export default{
 }
 </script>
 
-<style>
-.nav{
+<style scoped>
+.navb .ak{
+    float: right;
+}
+.navb{
     background-color: #333;
     overflow: hidden;
 }
-.nav a{
+.navb a{
     float: left;
     color: #f2f2f2;
     text-align: center;
@@ -34,7 +37,7 @@ export default{
     font-size: 18px;
     margin-right: 5px;
 }
-.nav a:hover{
+.navb a:hover{
     background-color: rgb(230, 215, 215);
     color: #222;
 }

@@ -1,6 +1,7 @@
 <template>
   <Header />
   <!-- <h1>Hello User, Welcome to Add Restaurant Page</h1> -->
+<section class="sig">
   <div id="app">
     <form class="add">
       <img class="logo" src="../assets/restor.png" />
@@ -30,15 +31,19 @@
       </button>
     </form>
   </div>
+</section>
+<Footer />
 </template>
 
 <script>
 import axios from "axios";
 import Header from "./Header.vue";
+import Footer from "./Footer"
 export default {
   name: "Add-Page ",
   components: {
     Header,
+    Footer
   },
   data() {
     return {
@@ -82,5 +87,10 @@ h1 {
   width: 500px;
   padding: 10px;
   border-radius: 50px;
+}
+.sig{
+  justify-content: center;
+  display: flex;
+  background-color: #e7ac54;
 }
 </style>

@@ -5,6 +5,7 @@ import {createWebHistory, createRouter} from 'vue-router';
 import SignIn from './components/SignIn.vue'
 import Add from './components/Add.vue'
 import Update from './components/Update.vue'
+import Forgot from './components/Forgot.vue'
 
 const routes=[
     {
@@ -35,6 +36,13 @@ const routes=[
         path:'/update/:id',
         
     },
+    {
+        name:'Forgot',
+        component: Forgot,
+        path:'/forgot',
+        
+    },
+
 ];
 const router = createRouter ({
     history:createWebHistory(),

@@ -26,11 +26,13 @@
 
         </tr>
     </table>
+    <Footer />
 </template>
 
 <script>
 import axios from 'axios';
 import Header from './Header.vue';
+import Footer from './Footer';
 export default{
     name: "Home-Page",
     data(){
@@ -41,6 +43,7 @@ export default{
     },
     components:{
         Header,
+        Footer
     },
     methods:{
         async deleteRestaurant(id){
