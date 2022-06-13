@@ -9,21 +9,22 @@ import Forgot from './components/Forgot.vue'
 
 const routes=[
     {
+        name:'SignIn',
+        component: SignIn,
+        path:'/',
+        
+    },
+    {
         name: "Home",
         component: Home,
-        path: '/',
+        path: '/home',
     },
     {
         name: "SignUp",
         component: SignUp,
         path: '/sign-up',
     },
-    {
-        name:'SignIn',
-        component: SignIn,
-        path:'/sign-in',
-        
-    },
+   
     {
         name:'Add',
         component: Add,
@@ -42,7 +43,6 @@ const routes=[
         path:'/forgot',
         
     },
-
 ];
 const router = createRouter ({
     history:createWebHistory(),
