@@ -17,6 +17,7 @@
     </form>
   </div>
 </section> -->
+<img class="add_resto" style="width:400px"  src="../assets/resto1.png" />
 <h1>Hello User, Welcome to Add Restaurant</h1>
 <form class="row g-3 mt-5 mb-5 needs-validation" validate>
   <div class="col-md-4 position-relative">
@@ -56,9 +57,6 @@
       <option>Tamil Nadu</option>
       <option>Andra Pradesh</option>
     </select>
-    <div class="invalid-tooltip">
-      Please select a valid state.
-    </div>
   </div>
   <div class="col-md-3 position-relative">
     <label for="validationTooltip05" class="form-label">Zip</label>
@@ -67,7 +65,6 @@
       Please provide a valid zip.
     </div>
   </div>
-
   <div class="col-12">
     <button class="btn btn-primary" v-on:click="addRestaurant" validate>Submit</button>
   </div>
@@ -95,7 +92,7 @@ export default {
         city: "",
         state: "",
         zip:"",
-        image:"",
+        previewImage: null
       },
     };
   },
@@ -109,8 +106,6 @@ export default {
         city: this.restaurants.city,
         state: this.restaurants.state,
         zip: this.restaurants.zip,
-        image: this.restaurants.image,
-
       });
       if (result.status == 201) {
         this.$router.push({ name: "Home" });
@@ -118,7 +113,6 @@ export default {
       console.log("result", result);
     },
   },
-
   mounted() {
     let user = localStorage.getItem("user-info");
     if (!user) {
@@ -128,6 +122,15 @@ export default {
 };
 </script>
 <style scoped>
+.imagePreviewWrapper {
+    width: 250px;
+    height: 250px;
+    display: block;
+    cursor: pointer;
+    margin: 0 auto 30px;
+    background-size: cover;
+    background-position: center center;
+}
 h1 {
   color: orange;
 }
@@ -145,5 +148,9 @@ h1 {
   justify-content: center;
   display: flex;
   background-color: #e7ac54;
+}
+.add_resto{
+  padding: 0px;
+  margin: 0px;
 }
 </style>

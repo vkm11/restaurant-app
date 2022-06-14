@@ -1,13 +1,13 @@
 <template>
-<section class="sig">
+
+<div class="sig">
   <div id="appp" >
     <img class="logo" src="../assets/restor.png" />
     <h1>Sign-In</h1>
     <div class="Sign-In">
-      <input type="text" v-model="email" placeholder="Enter Email"/>
-      <input type="password" v-model="password" placeholder="Enter Password"/>
+      <input type="text" v-model="email" placeholder="Enter Email" required/>
+      <input type="password" v-model="password" placeholder="Enter Password" required/>
       <button class="button1" v-on:click="login">Sign-In</button>
-
       <p>
         <br />
         create an account <router-link to="/sign-up">Sign-Up </router-link>
@@ -18,11 +18,12 @@
     </div>
   </div>
 
-  </section>
+  </div>
 </template>
 
 <script>
 import axios from "axios";
+import swal from 'sweetalert';
 export default {
   name: "SignIn-Page",
   data() {
@@ -32,11 +33,14 @@ export default {
     };
   },
   methods: {
+
     // login(){
     //   console.log(this.email, this.password)
     // }
 
     async login() {
+      // swal("Oops...", "Invalid Email Id and password!", "error");
+      swal("Oops...", "filed is Empty!", "error");
       let result = await axios.get(
         `http://localhost:3000/users?email=${this.email}&password=${this.password}`
       );
@@ -44,10 +48,17 @@ export default {
       if (result.status == 200 && result.data.length > 0) {
         localStorage.setItem("user-info", JSON.stringify(result.data[0]));
         this.$router.push({ name: "Home" });
+        swal("Login Sucessfully!", "You clicked the button!", "success");
+      }
+      else {
+
+        swal("Oops...", "Invalid Email Id and password!", "error");
       }
       // console.log(this.email, this.password);
       // http://localhost:3000/users?email=vijay@gmail.com&password=vijay@123
+      // swal("Oops...", "Something went wrong!", "error");
     },
+    
   },
   mounted() {
     let user = localStorage.getItem("user-info");

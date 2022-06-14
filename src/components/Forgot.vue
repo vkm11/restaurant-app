@@ -19,7 +19,7 @@ export default {
     name:"Forgot-Password",
     dat(){
         return{
-            email: "",
+            email:"",
         }
     },
     methods:{

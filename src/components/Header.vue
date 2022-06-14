@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import swal from 'sweetalert';
 export default{
     name:"Header-page",
     methods:{
@@ -15,6 +16,7 @@ export default{
             // console.log("Logout")
             localStorage.clear();
             this.$router.push({name:'SignIn'});
+            swal("Logout Sucessfully!", "You clicked the button!", "success");
         }
     }
 }

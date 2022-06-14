@@ -1,7 +1,6 @@
 <template>
   <Header />
-  
-  <br />
+  <img class="add_resto" style="width:400px"  src="../assets/resto1.png" />
   <h1>Hello {{ name }}, Welcome to Home Page</h1>
   <!-- <p v-for="item in restaurants" :key="item" >
         {{item.id}} --- {{item.name}}
@@ -31,7 +30,7 @@
         <td>{{ item.city }}</td>
         <td>{{ item.state }}</td>
         <td>{{ item.zip }}</td>
-        <td><img :src="item.image" /></td>
+        <td>{{item.image}}</td>
         <td>
           <router-link :to="'/update/' + item.id">
             <img class="logo" src="../assets/upDate.png"/>

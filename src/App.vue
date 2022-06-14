@@ -21,6 +21,9 @@ export default {
   padding: 10px;
   /* margin-top: 60px; */
 }
+h1{
+  color: orange;
+}
 body{
   padding: 0;
   margin: 0;

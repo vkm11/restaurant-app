@@ -1,5 +1,6 @@
 <template>
     <Header />
+    <img class="add_resto" style="width:400px"  src="../assets/resto1.png" />
     <h1>Hello User, Update Restaurant Page</h1>
     <!-- <form class="add">
         <input type="text" placeholder="Enter Name" v-model="restaurants.name" name="name"/>
@@ -61,20 +62,29 @@
         </div>
     </div>
 
+  <div>
+    <div class="imagePreviewWrapper" :style="{ 'background-image': `url(${previewImage})` }"
+      @click="selectImage">
+    </div>
+    <input ref="fileInput" type="file" @input="pickFile">
+  </div>
+
     <div class="col-12">
         <button class="btn btn-primary" v-on:click="updateRestaurant">Update</button>
     </div>
 </form>
-
+<Footer />
 </template>
 
 <script>
 import axios from 'axios';
 import Header from './Header.vue';
+import Footer from './Footer.vue';
 export default{
     name: "Update-Page ",
     components:{
         Header,
+        Footer,
     },
     data(){
         return{
@@ -85,6 +95,7 @@ export default{
                 city: "",
                 state: "",
                 zip:"",
+                image: "",
             }
         }
     },
@@ -101,6 +112,8 @@ export default{
                 city:this.restaurants.city,
                 state:this.restaurants.state,
                 zip:this.restaurants.zip,
+                image:this.restaurants.image,
+                
             });
             if(result.status==200)
             {
