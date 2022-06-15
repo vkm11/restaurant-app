@@ -3,7 +3,7 @@
         <router-link to="/">Home</router-link> 
         <router-link to="/add">Add Restaurant</router-link> 
         <!-- <router-link to="/update">Update Restaurant</router-link>  -->
-        <a class="ak" v-on:click="logout" href="#">Logout</a>
+        <a class="ak" v-on:click="logout">Logout</a>
     </div>
 </template>
 

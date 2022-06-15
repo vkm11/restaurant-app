@@ -19,34 +19,22 @@
 </section> -->
 <img class="add_resto" style="width:400px"  src="../assets/resto1.png" />
 <h1>Hello User, Welcome to Add Restaurant</h1>
-<form class="row g-3 mt-5 mb-5 needs-validation" validate>
+<form class="row g-3 mt-5 mb-5 need-validation" validate>
   <div class="col-md-4 position-relative">
     <label for="validationTooltip01" class="form-label">Restaurant Name</label>
     <input type="text" class="form-control" id="validationTooltip01" v-model="restaurants.name" name="name" required>
-    <div class="valid-tooltip">
-      Looks good!
-    </div>
   </div>
   <div class="col-md-4 position-relative">
     <label for="validationTooltip02" class="form-label">Restaurant Address</label>
     <input type="text" class="form-control" id="validationTooltip02" v-model="restaurants.address" name="address" required>
-    <div class="valid-tooltip">
-      Looks good!
-    </div>
   </div>
   <div class="col-md-4 position-relative">
     <label for="validationTooltip03" class="form-label">Contact No.</label>
     <input type="text" class="form-control" id="validationTooltip03" v-model="restaurants.contact" name="contact" required>
-    <div class="valid-tooltip">
-      Looks good!
-    </div>
   </div>
   <div class="col-md-6 position-relative">
     <label for="validationTooltip03" class="form-label">City</label>
     <input type="text" class="form-control" id="validationTooltip03" v-model="restaurants.city" name="city" required>
-    <div class="invalid-tooltip">
-      Please provide a valid city.
-    </div>
   </div>
   <div class="col-md-3 position-relative">
     <label for="validationTooltip04" class="form-label">State</label>
@@ -61,9 +49,6 @@
   <div class="col-md-3 position-relative">
     <label for="validationTooltip05" class="form-label">Zip</label>
     <input type="text" class="form-control" id="validationTooltip05" v-model="restaurants.zip" name="zip" required>
-    <div class="invalid-tooltip">
-      Please provide a valid zip.
-    </div>
   </div>
   <div class="col-12">
     <button class="btn btn-primary" v-on:click="addRestaurant" validate>Submit</button>
@@ -74,6 +59,7 @@
 </template>
 
 <script>
+import swal from 'sweetalert';
 import axios from "axios";
 import Header from "./Header.vue";
 import Footer from "./Footer"
@@ -92,7 +78,6 @@ export default {
         city: "",
         state: "",
         zip:"",
-        previewImage: null
       },
     };
   },
@@ -106,11 +91,14 @@ export default {
         city: this.restaurants.city,
         state: this.restaurants.state,
         zip: this.restaurants.zip,
+        
       });
       if (result.status == 201) {
         this.$router.push({ name: "Home" });
+        
       }
       console.log("result", result);
+       swal("Added Sucessfully!", "You clicked the button!", "success");
     },
   },
   mounted() {
@@ -123,13 +111,7 @@ export default {
 </script>
 <style scoped>
 .imagePreviewWrapper {
-    width: 250px;
-    height: 250px;
-    display: block;
-    cursor: pointer;
-    margin: 0 auto 30px;
-    background-size: cover;
-    background-position: center center;
+    width: 50px;
 }
 h1 {
   color: orange;

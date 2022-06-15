@@ -1,23 +1,26 @@
 <template>
-  <section class="sig">
+<form class="was-validated">
+  <div class="sig">
     <div id="app">
       <img class="logo" src="../assets/restor.png" />
       <h1>Sign Up</h1>
       <div class="register">
-        <input type="text" v-model="name" placeholder="Enter Name" required/>
-        <input type="text" v-model="email" placeholder="Enter Email" required/>
-        <input type="password" v-model="password" placeholder="Enter Password" required/>
+        <input type="text"  v-model="name" name="name" placeholder="Enter Name" required/>
+        <input type="text" v-model="email" name="email" placeholder="Enter Email" required/>
+        <input type="password" v-model="password" name="password" placeholder="Enter Password" required/>
         <button class="button1" v-on:click="signUp">Sign Up</button>
         <p>
-          <br />
+          <br/>
           <router-link to="/">Sign-In</router-link> <br />
         </p>
       </div>
     </div>
-  </section>
+  </div>
+</form>
 </template>
 
 <script>
+import swal from 'sweetalert';
 import axios from "axios";
 export default {
   name: "SignUp",
@@ -30,6 +33,7 @@ export default {
   },
   methods: {
     async signUp() {
+      swal("Oops...", "Something went wrong!", "error");
       console.log("signUp", this.name, this.email, this.password);
       let result = await axios.post("http://localhost:3000/users", {
         email: this.email,
@@ -39,7 +43,8 @@ export default {
       console.log(result);
       if (result.status == 201) {
         localStorage.setItem("user-info", JSON.stringify(result.data));
-        this.$router.push({ name: "Home" });
+        this.$router.push({name:'Home'});
+        swal("SignUp Sucessfully!", "You clicked the button!", "success");
       }
     },
   },

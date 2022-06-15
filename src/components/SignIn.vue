@@ -1,7 +1,7 @@
 <template>
 
 <div class="sig">
-  <div id="appp" >
+  <div id="app" >
     <img class="logo" src="../assets/restor.png" />
     <h1>Sign-In</h1>
     <div class="Sign-In">
@@ -10,14 +10,14 @@
       <button class="button1" v-on:click="login">Sign-In</button>
       <p>
         <br />
-        create an account <router-link to="/sign-up">Sign-Up </router-link>
+        create an account <router-link to="/signup">Sign-Up </router-link>
       </p>
       <p class="forgot-password text-right">
         <router-link to="forgot">Forgot Password?</router-link>
+        <!-- <router-link :to="'/forgot/' + item.id">Forgot Password?</router-link> -->
       </p>
     </div>
   </div>
-
   </div>
 </template>
 
@@ -73,15 +73,14 @@ export default {
 h1 {
   color: orange;
 }
-#appp{
+#app{
   border: 20px ridge rgb(218, 194, 89);
   background: #4cacaf;
   margin-top: 60px;
   width: 500px;
   padding:10px;
   border-radius: 50px;
-  justify-content: center;
-  align-items: center;
+
 
 }
 .sig{

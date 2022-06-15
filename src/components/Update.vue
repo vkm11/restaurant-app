@@ -62,13 +62,6 @@
         </div>
     </div>
 
-  <div>
-    <div class="imagePreviewWrapper" :style="{ 'background-image': `url(${previewImage})` }"
-      @click="selectImage">
-    </div>
-    <input ref="fileInput" type="file" @input="pickFile">
-  </div>
-
     <div class="col-12">
         <button class="btn btn-primary" v-on:click="updateRestaurant">Update</button>
     </div>
@@ -78,6 +71,7 @@
 
 <script>
 import axios from 'axios';
+import swal from 'sweetalert';
 import Header from './Header.vue';
 import Footer from './Footer.vue';
 export default{
@@ -95,7 +89,6 @@ export default{
                 city: "",
                 state: "",
                 zip:"",
-                image: "",
             }
         }
     },
@@ -112,12 +105,12 @@ export default{
                 city:this.restaurants.city,
                 state:this.restaurants.state,
                 zip:this.restaurants.zip,
-                image:this.restaurants.image,
                 
             });
             if(result.status==200)
             {
                 this.$router.push({name:'Home'});
+                swal("Update Sucessfully!", "You clicked the button!", "success");
             }
         }
     },
@@ -132,6 +125,7 @@ export default{
         // console.log(this.$route.params.id)
         // console.log(result.data)
         this.restaurants=result.data;
+       
     }
 }
 </script>
