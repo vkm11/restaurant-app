@@ -146,13 +146,10 @@ export default {
 }
 .logo {
   width: 30px;
+  height: 30px;
 }
 td img{
   width: 80px;
   height: 50px;
-}
-.images{
-  width: 100;
-  height: 60;
 }
 </style>
