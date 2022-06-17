@@ -11,6 +11,37 @@ export default {
 </script>
 
 <style>
+.fa {
+  padding: 10px;
+  font-size: 40px;
+  border-radius: 50px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-instagram {
+  background: #d61d26;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

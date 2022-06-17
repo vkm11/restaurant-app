@@ -12,56 +12,49 @@
         </button>
     </form> -->
 
-    <form class="row g-3 mt-5 mb-5 needs-validation" validate>
-        <div class="col-md-4 position-relative">
-        <label for="validationTooltip01" class="form-label">Restaurant Name</label>
-        <input type="text" class="form-control" id="validationTooltip01" v-model="restaurants.name" name="name" required>
-        <div class="valid-tooltip">
-            Looks good!
-        </div>
+<form class="row g-3 mt-5 mb-5 needs-validation" validate>
+      <div class="col-md-4 position-relative">
+    <!-- <div class="wrapper">  -->
+      <label for="validationTooltip01">Restaurant Name</label>
+      <input type="text" class="form-control" pattern="^([a-zA-Z]|\s)*$" placeholder="Accept only Capital Letters" id="validationTooltip01" v-model="restaurants.name" name="name"/>
     </div>
+  <!-- </div> -->
+  <div class="col-md-4 position-relative">
+    <!-- <div class="wrapper">  -->
+      <label for="validationTooltip02">Restaurant Address</label>
+      <input type="text" class="form-control" pattern="^([a-zA-Z]|\s)*$" placeholder="Accept All" id="validationTooltip02" v-model="restaurants.address" name="address"/>
+    </div>
+  <!-- </div> -->
+   <div class="col-md-4 position-relative">
+    <!-- <div class="wrapper">  -->
+      <label for="validationTooltip03">Contact Number</label>
+      <input type="text" class="form-control" pattern="[0-9]{10}(\s*,*,\s*[0-9]{10})*" placeholder="Accept only 10 digit numbers" id="validationTooltip03" v-model="restaurants.contact" name="contact"/>
+    </div>
+  <!-- </div> -->
+  <div class="col-md-4 position-relative">
+    <!-- <div class="wrapper">  -->
+      <label for="validationTooltip04">City</label>
+      <input type="text" class="form-control" pattern="^([a-zA-Z]|\s)*$" placeholder="Accept Alphabets only" id="validationTooltip04" v-model="restaurants.city" name="city"/>
+    </div>
+  <!-- </div> -->
+  <div class="col-md-4 position-relative">
+    <!-- <div class="wrapper">  -->
+    <label for="validationTooltip05" class="form-label">State</label>
+    <select class="form-select" id="validationTooltip05" v-model="restaurants.state" name="state" required>
+      <option selected disabled value="">Please Select State</option>
+      <option>Karnataka</option>
+      <option>Maharashtra</option>
+      <option>Tamil Nadu</option>
+      <option>Andra Pradesh</option>
+    </select>
+  </div>
+  <!-- </div> -->
     <div class="col-md-4 position-relative">
-        <label for="validationTooltip02" class="form-label">Restaurant Address</label>
-        <input type="text" class="form-control" id="validationTooltip02" v-model="restaurants.address" name="address" required>
-        <div class="valid-tooltip">
-        Looks good!
-        </div>
+    <!-- <div class="wrapper">  -->
+      <label for="validationTooltip06">Zip</label>
+      <input type="text" class="form-control" pattern="[0-9]{6}(\s*,*,\s*[0-9]{6})*" placeholder="Accept only 6 digit numbers ex:- 123456" id="validationTooltip06" v-model="restaurants.zip" name="zip"/>
     </div>
-    <div class="col-md-4 position-relative">
-        <label for="validationTooltip03" class="form-label">Contact No.</label>
-        <input type="text" class="form-control" id="validationTooltip03" v-model="restaurants.contact" name="contact" required>
-        <div class="valid-tooltip">
-            Looks good!
-        </div>
-    </div>
-    <div class="col-md-6 position-relative">
-        <label for="validationTooltip03" class="form-label">City</label>
-        <input type="text" class="form-control" id="validationTooltip03" v-model="restaurants.city" name="city" required>
-        <div class="invalid-tooltip">
-            Please provide a valid city.
-        </div>
-    </div>
-    <div class="col-md-3 position-relative">
-        <label for="validationTooltip04" class="form-label">State</label>
-        <select class="form-select" id="validationTooltip04" v-model="restaurants.state" name="state" required>
-            <option selected disabled value="">Please Select State</option>
-            <option>Karnataka</option>
-            <option>Maharashtra</option>
-            <option>Tamil Nadu</option>
-            <option>Andra Pradesh</option>
-        </select>
-        <div class="invalid-tooltip">
-            Please select a valid state.
-        </div>
-    </div>
-    <div class="col-md-3 position-relative">
-        <label for="validationTooltip05" class="form-label">Zip</label>
-        <input type="text" class="form-control" id="validationTooltip05" v-model="restaurants.zip" name="zip" required>
-        <div class="invalid-tooltip">
-            Please provide a valid zip.
-        </div>
-    </div>
-
+  <!-- </div> -->
     <div class="col-12">
         <button class="btn btn-primary" v-on:click="updateRestaurant">Update</button>
     </div>
@@ -130,4 +123,41 @@ export default{
 }
 </script>
 <style scoped>
+body{
+  display:flex;
+  height:100vh;
+  justify-content:center;
+  align-items:center;
+  background-color:#eee
+}
+label{
+    font-size: 20px;
+}
+input{
+  height:50px;
+  width:400px;
+  /* padding: 5px; */
+  margin: 10px;
+  outline:none;
+  border:2px solid #000;
+
+  border-radius:6px;
+  padding:0px 10px;
+  font-size:18px;
+}
+input:invalid{
+  border:2px solid red;
+  animation:shake 300ms
+}
+@keyframes shake{
+  25%{
+    transform:translateX(4px)
+  }
+  50%{
+    transform:translateX(-4px)
+  }
+  75%{
+    transform:translateX(4px)
+  }
+}
 </style>

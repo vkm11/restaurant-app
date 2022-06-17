@@ -1,36 +1,121 @@
 <template>
   <Header />
-
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="images">
-      <div class="carousel-item active">
-        <img src="../assets/image1.jpg" class="d-block w-100" alt="image1">
-      </div>
-      <div class="carousel-item">
-        <img src="../assets/image2.jpg" class="d-block w-100" alt="image2">
-      </div>
-      <div class="carousel-item">
-        <img src="../assets/image3.jpg" class="d-block w-100" alt="image3">
-      </div>
-      <div class="carousel-item">
-        <img src="../assets/image4.jpg" class="d-block w-100" alt="image3">
-      </div>
-      <div class="carousel-item">
-        <img src="../assets/image5.jpg" class="d-block w-100" alt="image3">
+  <div class="container1">
+    <div
+      id="carouselExampleControls"
+      class="carousel slide carousel-fade"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="images">
+          <div class="carousel-item active">
+            <img
+              src="../assets/image1.jpg"
+              class="d-block w-100"
+              alt="image1"
+            />
+            <div class="content">
+              <h1>Welcome</h1>
+              <p></p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../assets/image2.jpg"
+              class="d-block w-100"
+              alt="image2"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../assets/image3.jpg"
+              class="d-block w-100"
+              alt="image3"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../assets/image4.jpg"
+              class="d-block w-100"
+              alt="image3"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../assets/image5.jpg"
+              class="d-block w-100"
+              alt="image3"
+            />
+          </div>
+        </div>
       </div>
     </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleControls"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleControls"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+  <div class="content">
+    <h1>Stay Connected:</h1>
+    <a
+      href="https://www.facebook.com/vijaykumar.mane.351"
+      class="fa fa-facebook"
+    ></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a
+      href="https://www.linkedin.com/in/vijaykumar-mane-87b625229/"
+      class="fa fa-linkedin"
+    ></a>
+    <a
+      href="https://www.instagram.com/vijay111mane/"
+      class="fa fa-instagram"
+    ></a>
+  </div>
+<br>
+<h2>Restaurants Near You</h2>
+<div class="container-cards">
+<div class="card" style="width: 18rem;">
+  <img src="../assets/card1.jpg" class="card-img-top" alt="card1">
+  <div class="card-body">
+    <h2 class="card-title">Cafe G</h2>
+    <p class="card-text">Race Course Road, West Bangalore</p>
+    <a href="#" class="btn btn-primary">somewhere</a>
+  </div>
 </div>
-  <img class="add_resto" style="width:400px"  src="../assets/resto1.png" />
+
+<div class="card" style="width: 18rem;">
+  <img src="../assets/card2.jpg" class="card-img-top" alt="card2">
+  <div class="card-body">
+    <h2 class="card-title">Badmaash</h2>
+    <p class="card-text">Vittal Mallya Road, Central Bangalore</p>
+    <a href="#" class="btn btn-primary">somewhere</a>
+  </div>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <img src="../assets/card5.jpg" class="card-img-top" alt="card5">
+  <div class="card-body">
+    <h2 class="card-title">Any Time</h2>
+    <p class="card-text">Shantinagar double road, Bangalore</p>
+    <a href="#" class="btn btn-primary">somewhere</a>
+  </div>
+</div>
+</div>
+  <img class="add_resto" style="width: 400px" src="../assets/resto1.png" />
   <h1>Hello {{ name }}, Welcome to Home Page</h1>
   <!-- <p v-for="item in restaurants" :key="item" >
         {{item.id}} --- {{item.name}}
@@ -63,10 +148,9 @@
         <td><img :src="item.image" /></td>
         <td>
           <router-link :to="'/update/' + item.id">
-            <img class="logo" src="../assets/upDate.png"/>
-            </router-link>
+            <img class="logo" src="../assets/upDate.png" />
+          </router-link>
           <button v-on:click="deleteRestaurant(item.id)">
-          
             <img class="logo" src="../assets/trash.png" />
           </button>
         </td>
@@ -77,7 +161,7 @@
 </template>
 
 <script>
-import swal from 'sweetalert';
+import swal from "sweetalert";
 import axios from "axios";
 import Header from "./Header.vue";
 import Footer from "./Footer";
@@ -102,25 +186,22 @@ export default {
         this.loadData();
       }
       //  swal("Deleted Sucessfully!", "You clicked the button!", "success");
-    
-    swal({
-  title: "Are you sure?",
-  text: "Once deleted, you will not be able to recover this imaginary file!",
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-})
-.then((willDelete) => {
-  if (willDelete) {
-    swal("Poof! Your Restaurant record file has been deleted!", {
-      icon: "success",
-    });
-  } else {
-    swal("Your imaginary file is safe!");
-  }
-});
-    
-    
+
+      swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          swal("Poof! Your Restaurant record file has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Your imaginary file is safe!");
+        }
+      });
     },
     async loadData() {
       let user = localStorage.getItem("user-info");
@@ -148,8 +229,26 @@ export default {
   width: 30px;
   height: 30px;
 }
-td img{
-  width: 80px;
+td img {
+  width: 100px;
   height: 50px;
+}
+
+.container1 {
+  position: relative;
+}
+
+.container1 .content {
+  position: absolute;
+  bottom: 0;
+  color: #f1f1f1;
+}
+.container-cards{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin: 10px;
+  white-space: 10px;
+
 }
 </style>
